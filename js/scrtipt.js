@@ -12,10 +12,13 @@ const game = function checkGuess(){
       count = 10;
 
   return function start() {
-    let guess = prompt("Угадай число от 1 до 100", "Введи число");
-    console.log(guess); 
-    !isNumber(guess);
-    let guessNum = Number(guess);
+    let num;
+    do{
+      num = prompt("Угадай число от 1 до 100", "Введи число");
+      console.log(num);
+    }
+    while (!isNumber(num));
+    let guessNum = Number(num);
 
     if(attempt <= count){
       if(guessNum === randomNum){
